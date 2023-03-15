@@ -105,6 +105,8 @@ class UserController extends Controller
             $user['name'] = $request['name'];
             $user['email'] = $request['email'];
             $user['password'] = $request['password'];
+            $user->save();
+            return \response()->json("Успешно обновлено",200);
         } else {
             return \response()->json("Данный пользователь не зарегистрирован", 204);
         }

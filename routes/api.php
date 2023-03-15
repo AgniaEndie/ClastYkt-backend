@@ -19,12 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->controller(\App\Http\Controllers\UserController::class)->group(function (){
-   Route::put('/user/update','update');
+   Route::put('/user/update/{id}','update');
    Route::delete('/user/delete/{id}','destroy');
    Route::get('/user/{id}','show');
 });
 
-Route::controller(\App\Http\Controllers\UserController::class)->group(function (){
+Route::controller(\App\Http\Controllers\UserController::class)->group(function () {
     Route::post('/user/register','create');
     Route::post('/user/login','login')->name('login');
     Route::get('/users/all','index');
