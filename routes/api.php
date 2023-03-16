@@ -28,5 +28,5 @@ Route::controller(\App\Http\Controllers\UserController::class)->group(function (
     Route::post('/user/register','create');
     Route::post('/user/login','login')->name('login');
     Route::get('/users/all','index');
-
 });
+
